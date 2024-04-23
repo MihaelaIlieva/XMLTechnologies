@@ -1,0 +1,1326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalog [
+<!ELEMENT catalog ((battle, battle, battle, battle, battle, battle+))>
+<!ATTLIST catalog
+    xmlns:xsi CDATA #FIXED "http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation CDATA #FIXED "battles_XMLSchema.xsd">
+<!ELEMENT battle (image, conflict, cause, triggering_event, location, start, course_of_events, end, result, (fighting_force, fighting_force+))>
+<!ATTLIST battle
+	name CDATA #IMPLIED
+	type CDATA #IMPLIED
+>
+<!ELEMENT image (#PCDATA)>
+<!ATTLIST image
+	href ENTITY #IMPLIED
+>
+<!ELEMENT conflict (name, period)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT period (#PCDATA)>
+<!ELEMENT cause (#PCDATA)>
+<!ELEMENT triggering_event (#PCDATA)>
+<!ELEMENT location (#PCDATA)>
+<!ELEMENT start (date?, time?)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT course_of_events (consecutive_event*)>
+<!ELEMENT consecutive_event (date?, event*)>
+<!ELEMENT event (#PCDATA)>
+<!ELEMENT end (date?, time?)>
+<!ELEMENT result (winner, results_list)>
+<!ELEMENT winner (#PCDATA)>
+<!ATTLIST winner
+	force_id IDREF #REQUIRED
+>
+<!ELEMENT results_list (event*)>
+<!ELEMENT fighting_force (name, fighting_type, military_leaders_list, allies_list?, power, losses)>
+<!ATTLIST fighting_force
+	id ID #REQUIRED
+>
+<!ELEMENT fighting_type (#PCDATA)>
+<!ELEMENT military_leaders_list ((leader, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?, leader?))>
+<!ELEMENT leader (#PCDATA)>
+<!ELEMENT allies_list ((ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?, ally?))>
+<!ELEMENT ally (#PCDATA)>
+<!ELEMENT power (soldiers, weapons?, fleet?)>
+<!ELEMENT soldiers (military_unit+)>
+<!ATTLIST soldiers
+	count-all CDATA #IMPLIED
+>
+<!ELEMENT military_unit (type+, count*)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT count (#PCDATA)>
+<!ELEMENT weapons (combat_unit+)>
+<!ELEMENT combat_unit (type+, count*)>
+<!ELEMENT fleet (naval_military_item+)>
+<!ELEMENT naval_military_item (type+, count*)>
+<!ELEMENT losses (killed*, enslaved*, wounded*, captured*)>
+<!ELEMENT killed (#PCDATA)>
+<!ELEMENT enslaved (#PCDATA)>
+<!ELEMENT wounded (#PCDATA)>
+<!ELEMENT captured (#PCDATA)>
+<!NOTATION jpg SYSTEM "image/jpeg">
+<!NOTATION png SYSTEM "image/png">
+<!ENTITY constantinople SYSTEM "images/constantinople.jpg" NDATA jpg>
+<!ENTITY ongul SYSTEM "images/ongul.jpg" NDATA jpg>
+<!ENTITY doyran SYSTEM "images/doyran.png" NDATA png>
+<!ENTITY zanzibar SYSTEM "images/zanzibar.jpg" NDATA jpg>
+<!ENTITY kursk SYSTEM "images/kursk.jpg" NDATA jpg>
+<!ENTITY izrael SYSTEM "images/izrael.jpg" NDATA jpg>
+]>
+<?xml-stylesheet type="text/xsl" version="1.0" href="battles_xslt.xsl"?>
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="battles_XMLSchema.xsd">
+	<!-- тук да се добавят атрибутите на битката -->
+	<battle name="Падането на Константинопол" type="сухопътна">
+		<image href="constantinople" />
+		<conflict>
+			<name>
+				Война между Османската империя и Византийската империя
+			</name>
+			<period>
+				1452-1453
+			</period>
+		</conflict>
+		<cause>
+			Обсада на Константинопол от Османската империя
+		</cause>
+		<triggering_event>
+			-
+		</triggering_event>
+		<location>
+			Константинопол
+		</location>
+		<start>
+			<date>
+				1456-05-29
+			</date>
+			<!-- time да може да не е задължително -->
+			<time>
+				03:00:00
+			</time>
+		</start>
+		<course_of_events>
+			<!-- променено име -->
+				<consecutive_event>
+					<date>
+						1456-04-05
+					</date>
+					<event>
+						Султан Мехмед II разполага войските си на 5 км от градските стени на Константинопол.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>
+						1456-04-07
+					</date>
+					<event>
+						Османските войски се доближават на 500 м от стените и се разгръщат по цялата им дължина.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>
+						1456-04-11
+					</date>
+					<event>
+						Османските войски се окопават и позиционират артилерията си, а сръбските сапьори започват да подкопават стените на града.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>
+						1456-04-12
+					</date>
+					<event>
+						Османският флот хвърля котва до града. Започва обстрелване на крепостните стени.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>
+						1456-04-18
+					</date>
+					<event>
+						Малък османски отряд напада стените и е отблъснат.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>
+						1456-04-20
+					</date>
+					<event>
+						Три генуезки и един византийски кораб пробиват блокадата, влизат в пристанището и нанасят значителни щети на османския флот.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>
+						1456-05-07
+					</date>
+					<event>
+						Няколко десетки хиляди души от османците правят първите сериозни опити за щурмуване на града. Отблъснати са.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>
+						1456-05-12
+					</date>
+					<event>
+						Няколко десетки хиляди души от османците правят първите сериозни опити за щурмуване на града. Отблъснати са.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>
+						1456-05-28
+					</date>
+					<event>
+						Подготовка на решителния щурм от турците. Към крепостта са предвижени 2000 стълби.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>
+						1456-05-29
+					</date>
+					<event>
+						Три часа преди изгрев слънце започва нападението. Осъществен е пробив по изгрев слънце, настъпва смут в средите на византийците. Малко по-късно е пробит и тила на защитниците - това е краят на Константинопол.
+					</event>
+				</consecutive_event>
+		</course_of_events>
+		<end>
+			<date>
+				1456-05-29
+			</date>
+		</end>
+		<result>
+			<winner force_id="Ottoman_Empire">
+				Османска империя
+			</winner>
+			<!-- променено име -->
+			<results_list>
+				<event>
+					Константинопол става новата столица на Османската империя
+				</event>
+				<event>
+					Византийската империя спира да съществува
+				</event>
+				<event>
+					Край на европейското Средновековие.
+				</event>
+			</results_list>
+		</result>
+		<fighting_force id="Ottoman_Empire">
+			<name>
+				Османска империя
+			</name>
+			<!-- may be attribute -->
+			<fighting_type>
+				<!-- attacker or defender -->
+				Нападателна сила
+			</fighting_type>
+			<!-- променено име и направен списък с лидери -->
+			<military_leaders_list>
+				<leader>
+					Султан Мехмед II
+				</leader>				
+			</military_leaders_list>
+			<!-- променено име -->
+			<allies_list>
+				<!-- променено име -->
+					<ally>
+						Сръбско деспотство
+					</ally>
+			</allies_list>
+			<power>
+				<!-- атрибута каунт ол -->
+				<soldiers count-all="100-130 000">
+					<!-- променено име -->
+						<military_unit>
+							<type>
+								Еничари
+							</type>
+							<count>
+								45-50 000
+							</count>
+						</military_unit>
+						<military_unit>
+							<type>
+								Стрелци
+							</type>
+							<count>
+								40 000
+							</count>
+						</military_unit>
+						<military_unit>
+							<type>
+								Пехота
+							</type>
+							<count>
+								40 000
+							</count>
+						</military_unit>
+				</soldiers>
+				<weapons>
+					<!-- променено име -->
+						<combat_unit>
+							<type>
+								Оръдия
+							</type>
+						</combat_unit>
+						<combat_unit>
+							<type>
+								Катапулти
+							</type>
+						</combat_unit>
+				</weapons>
+				<!-- където fleet е празно го трия -->
+				<fleet>
+					<!-- променено име, махнат лист -->
+						<naval_military_item>
+							<type>
+								Галери
+							</type>
+							<count>
+								31
+							</count>
+						</naval_military_item>
+						<naval_military_item>
+							<type>
+								Лодки
+							</type>
+							<count>
+								95
+							</count>
+						</naval_military_item>
+				</fleet>
+			</power>
+			<losses>
+				<killed>
+					15-50 000
+				</killed>
+			</losses>
+		</fighting_force>
+		<fighting_force id="Byzantine_Empire_15_century">
+			<name>
+				Византийска империя
+			</name>
+			<!-- may be attribute -->
+			<fighting_type>
+				<!-- attacker or defender -->
+				Отбраняваща сила
+			</fighting_type>
+			<military_leaders_list>
+				<leader>
+					император Константин XI Палеолог
+				</leader>				
+			</military_leaders_list>
+			<allies_list>
+					<ally>
+						Папска държава
+					</ally>
+					<ally>
+						Генуа
+					</ally>
+					<ally>
+						Венецианска република
+					</ally>
+			</allies_list>
+			<power>
+				<soldiers count-all="7-10 000">
+					<military_unit>
+						<type>
+							Стрелци
+						</type>
+						<count>
+							200
+						</count>
+					</military_unit>
+					<military_unit>
+						<type>
+							Пехота
+						</type>
+						<count>
+							7 000
+						</count>
+					</military_unit>
+				</soldiers>
+				<fleet>
+					<naval_military_item>
+						<type>
+							Кораби
+						</type>
+						<count>
+							26
+						</count>
+					</naval_military_item>
+				</fleet>
+			</power>
+			<losses>
+				<killed>
+					4500
+				</killed>
+				<enslaved>
+					30-50 000
+				</enslaved>
+			</losses>
+		</fighting_force>
+	</battle>
+
+	<battle name="Битката при Онгъла" type="сухопътна">
+		<image href="ongul" />
+		<conflict>
+			<name>
+                Война между българите на хан Аспарух и Византийската империя
+			</name>
+			<period>
+                680 г. сл. Хр.
+			</period>
+		</conflict>
+		<cause>
+            Преминаване на Аспарух и българската войска отвъд Дунава
+		</cause>
+		<triggering_event>
+			Византийската войска достига до поселищата на българите и започва военни действия
+		</triggering_event>
+		<location>
+            местността Онгъла, малка Скития
+		</location>
+		<start>
+			<date>
+				0680-07-15
+			</date>
+		</start>
+		<course_of_events>
+			<consecutive_event>
+                <event>
+                    Стресната от многобройния противник прабългарската армия се оттегля в своето укрепление, издигнато на остров Певки.
+                </event>
+            </consecutive_event>
+			<consecutive_event>
+                <event>
+                    Войските на Аспарух нанасят тактически удари на ромеите без да правят опити да ги разбият.
+                </event>
+            </consecutive_event>
+			<consecutive_event>
+                <event>
+                    Ромеите обсаждат укрепения лагер в продължение на 4 дни, след което императорът Константин IV съобщава на войските си, че отива на лечение в Акве Калиде и напуска бойното поле. Това е разтълкувано от войските като опит за бягство.
+                </event>
+            </consecutive_event>
+			<consecutive_event>
+                <event>
+                    Ромеите започват да отстъпват. Заповедта на императора е да се симулира бягство, за да изкарат българите от укреплението им.
+                </event>
+            </consecutive_event>
+			<consecutive_event>
+                <event>
+                    Прабългарската армия се възползвала от създалата се психологическа ситуация и неочаквано атакувала превъзхождащата я в пъти византийска войска, като ѝ нанесла поражение.
+                </event>
+            </consecutive_event>
+		</course_of_events>
+		<end>
+			<date>
+				0680-07-25
+			</date>
+		</end>
+		<result>
+			<winner force_id="Bulgars">
+				Прабългари
+			</winner>
+			<results_list>
+				<event>
+                    Първа българска победа над Византийската империя.
+				</event>
+				<event>
+                    Възможност да се продължат нападенията в Мизия, които принуждават императора да сключи мирен договор с Аспарух.
+				</event>
+				<event>
+                    Създаване на Българската държава.
+				</event>
+			</results_list>
+		</result>
+		<fighting_force id="Bulgars">
+			<name>
+                Прабългари
+			</name>
+			<!-- may be attribute -->
+			<fighting_type>
+				<!-- attacker or defender -->
+				Отбраняваща сила
+			</fighting_type>
+			<military_leaders_list>
+				<leader>
+					хан Аспарух
+				</leader>				
+			</military_leaders_list>
+			<allies_list>
+				<!-- променено име -->
+					<ally>
+						Седем славянски племена
+					</ally>
+			</allies_list>
+			<power>
+				<soldiers count-all="10 000">
+					<military_unit>
+                        <type>
+                            Пехота и кавалерия
+                        </type>
+                        <count>
+                            10 000
+                        </count>
+                    </military_unit>
+				</soldiers>
+			</power>
+			<losses>
+				<killed>
+                    незначителни жертви
+				</killed>
+			</losses>
+		</fighting_force>
+		<fighting_force id="Byzantine_Empire_7_century">
+			<name>
+                Византийска империя
+			</name>
+			<!-- may be attribute -->
+			<fighting_type>
+                Нападателна сила
+				<!-- attacker or defender -->
+			</fighting_type>
+			<military_leaders_list>
+				<leader>
+					император Константин IV Погонат
+				</leader>				
+			</military_leaders_list>
+			<power>
+				<soldiers count-all="25 000">
+					<military_unit>
+						<type>
+							Войски от всички теми
+						</type>
+						<count>
+							25 000
+						</count>
+					</military_unit>
+				</soldiers>
+			</power>
+			<losses>
+				<killed>
+                    Големи загуби
+				</killed>
+			</losses>
+		</fighting_force>
+	</battle>
+
+    <battle name="Битката при Дойран" type="сухопътна">
+		<image href="doyran" />
+		<conflict>
+			<name>
+                Първа световна война
+			</name>
+			<period>
+                1914-1918 г.
+			</period>
+		</conflict>
+		<cause>
+            Силите на Антантата настъпват към българските земи.
+		</cause>
+		<triggering_event>
+			След отблъсната атака на 9-10 февруари, съюзниците планират нов опит за пробив.
+		</triggering_event>
+		<location>
+            Дойранска котловина
+		</location>
+		<start>
+			<date>
+				1917-04-22
+			</date>
+		</start>
+		<course_of_events>
+			<consecutive_event>
+                <date>
+                    1917-04-22
+                </date>
+                <event>
+                    Атаката започва с тежък четиридневен артилерийски обстрел. Владимир Вазов нарежда денонощен огън по позициите на британците.
+                </event>
+            </consecutive_event>
+			<consecutive_event>
+                <date>
+                    1917-04-25
+                </date>
+                <event>
+                    Английската пехота започва атаката си, като 12 роти атакуват позициите на втора бригада и след кървава битка успяват да завземат точките „Нерезов“, „Княз Борис“ и „Пазарджик“. След контраатака на българите, британците са отблъснати с тежки жертви и към 8 часа вечерта се оттеглят.
+                </event>
+            </consecutive_event>
+			<consecutive_event>
+                <date>
+                    1917-04-27
+                </date>
+                <event>
+                    Поради силния български огън, англичаните отстъпват към първоначалните си позиции.
+                </event>
+            </consecutive_event>
+			<consecutive_event>
+                <date>
+                    1917-05-08
+                </date>
+                <event>
+                    Британците правят нови опити за пробив. Главното нападение започва в 9 часа с британски войски на 5 вълни към българските позиции. Британците претърпяват четири провалени нощни атаки.
+                </event>
+            </consecutive_event>
+				<consecutive_event>
+					<date>
+						1917-05-09
+					</date>
+					<event>
+                        Артилерийският дуел продължава и на 9 май, но поради тежки загуби англичаните изоставят всички свои атаки. Победа за българите.
+					</event>
+				</consecutive_event>
+		</course_of_events>
+		<end>
+			<date>
+				1917-05-09
+			</date>
+		</end>
+		<result>
+			<winner force_id="Bulgaria">
+                България
+				<!-- тук може winner и loser да са атрибути на fighting force -->
+			</winner>
+			<results_list>
+				<event>
+                    Сраженията утихват за 16 месеца. Това позволява на противниците да възстановят силите си.
+				</event>
+			</results_list>
+		</result>
+		<fighting_force id="Great_Britain_20_cenury">
+			<name>
+                Англия
+			</name>
+			<!-- may be attribute -->
+			<fighting_type>
+				<!-- attacker or defender -->
+				Нападателна сила
+			</fighting_type>
+			<military_leaders_list>
+				<leader>
+					Джордж Милн
+				</leader>				
+			</military_leaders_list>
+			<power>
+				<soldiers count-all="43 000">
+						<military_unit>
+							<type>
+                                Пехотинци - 3 девизии
+							</type>
+							<count>
+                                43 000
+							</count>
+						</military_unit>
+				</soldiers>
+				<weapons>
+						<combat_unit>
+							<type>
+                                Оръдия
+							</type>
+                            <count>
+								160
+							</count>
+						</combat_unit>
+                        <combat_unit>
+							<type>
+                                Минохвъргачки
+							</type>
+                            <count>
+								110
+							</count>
+						</combat_unit>
+                        <combat_unit>
+							<type>
+                                Къртечници
+							</type>
+                            <count>
+								440
+							</count>
+						</combat_unit>
+				</weapons>
+			</power>
+			<losses>
+				<killed>
+                    12 000
+				</killed>
+			</losses>
+		</fighting_force>
+		<fighting_force id="Bulgaria">
+			<name>
+                България
+			</name>
+			<!-- may be attribute -->
+			<fighting_type>
+                Отбраняваща сила
+				<!-- attacker or defender -->
+			</fighting_type>
+			<military_leaders_list>
+				<leader>
+					генерал Владимир Вазов
+				</leader>				
+			</military_leaders_list>
+			<power>
+				<soldiers count-all="30 000">
+						<military_unit>
+							<type>
+                                Пехотинци - 1 девизия, с подкрепления
+							</type>
+							<count>
+                                30 000
+							</count>
+						</military_unit>
+				</soldiers>
+				<weapons>
+						<combat_unit>
+							<type>
+                                Оръдия
+							</type>
+                            <count>
+								147
+							</count>
+						</combat_unit>
+                        <combat_unit>
+							<type>
+                                Минохвъргачки
+							</type>
+                            <count>
+								35
+							</count>
+						</combat_unit>
+                        <combat_unit>
+							<type>
+                                Къртечници
+							</type>
+                            <count>
+								130
+							</count>
+						</combat_unit>
+				</weapons>
+			</power>
+			<losses>
+				<killed>
+                    2000
+				</killed>
+			</losses>
+		</fighting_force>
+	</battle>
+
+    <battle name="Шестдневната война" type="сухопътна, въздушна">
+		<image href="izrael" />
+		<conflict>
+			<name>
+                Арабско-израелската война
+			</name>
+			<period>
+                юни 1967 г.
+			</period>
+		</conflict>
+		<cause>
+            Така наречената предпазна военна кампания от Израел срещу натиска на арабските съседи на страната.
+		</cause>
+		<triggering_event>
+			Президентът на Египет - Насер, обявява Тиранския проток за затворен за израелски водни съдове.
+		</triggering_event>
+		<location>
+            Близкия изток
+		</location>
+		<start>
+			<date>
+				1967-06-05
+			</date>
+			<time>
+                07:50:00
+			</time>
+		</start>
+		<course_of_events>
+				<consecutive_event>
+					<date>
+                        1967-06-05
+					</date>
+					<event>
+                        Израел нанася въздушни удари по египетски летища. Почти целите военно-въздушни сили на Египет са унищожени.
+					</event>
+                    <event>
+                        Израел започва наземна офанзива в ивицата Газа и Синай. Насер нарежда евакуация на Синай. Израелските войски настъпват на запад, гонейки египтяните, което им нанася тежки загуби, и завладяват Синай.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>
+						1967-06-07
+					</date>
+					<event>
+                        Египтяните попадат в израелски капан в прохода Митла.
+					</event>
+                    <event>
+                        На Йорданския фронт израелците обграждат Йерусалим. Въпреки упоритата съпротива, Старият град е взет при нападение на 7 юни, до обяд е пленен и Витлеем, а по-късно и Гуш Ецион. В 20:00 на същия ден страните приемат предложението на Съвета за сигурност на ООН и прекратяват военните действия.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>
+						1967-06-09
+					</date>
+					<event>
+                        Израелците започват настъпление през Дан Баниас в подножието на планината Хермон - Сирийски фронт.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>
+						1967-06-10
+					</date>
+					<event>
+                        Израелските сили от различни посоки са се приближили до ключовата цел на настъплението – Кунейтра. До вечерта градът е бил превзет. В 19:30 ч. на същият ден страните се договорят за прекратяване на огъня.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>
+						1967-06-11
+					</date>
+					<event>Подписано е примирие.
+					</event>
+				</consecutive_event>
+		</course_of_events>
+		<end>
+			<date>
+				1967-06-11
+			</date>
+		</end>
+		<result>
+			<winner force_id="Israel">
+				<!-- тук може winner и loser да са атрибути на fighting force -->
+                Израел
+			</winner>
+			<results_list>
+				<event>
+                    Израел поема контрол над ивицата Газа и Синайския полуостров от Египет, Западния бряг и Източен Йерусалим от Йордания и Голанските възвишения от Сирия - утроява площта си.
+				</event>
+			</results_list>
+		</result>
+		<fighting_force id="Israel">
+			<name>
+                Израел
+			</name>
+			<!-- may be attribute -->
+			<fighting_type>
+				<!-- attacker or defender -->
+				Нападателна сила
+			</fighting_type>
+			<military_leaders_list>
+				<leader>
+					генерал Моше Даян
+				</leader>				
+			</military_leaders_list>
+			<power>
+				<soldiers count-all="264 000">
+						<military_unit>
+							<type>
+                                Редовна войска
+							</type>
+							<count>
+                                50 000
+							</count>
+						</military_unit>
+                        <military_unit>
+							<type>
+                                Войници в резерва
+							</type>
+							<count>
+                                214 000
+							</count>
+						</military_unit>
+				</soldiers>
+				<weapons>
+						<combat_unit>
+							<type>Танка
+							</type>
+                            <count>800</count>
+						</combat_unit>
+                        <combat_unit>
+							<type>Военни самолети
+							</type>
+                            <count>300</count>
+						</combat_unit>
+				</weapons>
+			</power>
+			<losses>
+				<killed>
+                    776-983
+				</killed>
+                <wounded>
+                    4517
+				</wounded>
+                <captured>
+                    15
+				</captured>
+			</losses>
+		</fighting_force>
+		<fighting_force id="Arabic_union">
+			<name>
+                Съюз от арабски държави
+			</name>
+			<!-- may be attribute -->
+			<fighting_type>
+                Отбраняваща сила
+				<!-- attacker or defender -->
+			</fighting_type>
+			<military_leaders_list>
+                    <leader>Гамал Абдел Насер</leader>
+                    <leader>Нуредин Ал-Атаси</leader>
+                    <leader>Хюсеин Бил Тилал</leader>
+                    <leader>Абдул Рахмад Ариф</leader>
+                    <leader>Султан Абдулазис</leader>
+			</military_leaders_list>
+			<allies_list>
+					<ally>
+                        Египет
+					</ally>
+                    <ally>
+                        Сирия
+					</ally>
+                    <ally>
+                        Йордания
+					</ally>
+                    <ally>
+                        Ирак
+					</ally>
+                    <ally>
+                        Саудитска Арабия
+					</ally>
+			</allies_list>
+			<power>
+				<soldiers count-all="700 000">
+						<military_unit>
+							<type>
+                                Редовна войска
+							</type>
+							<count>
+                                567 000
+							</count>
+						</military_unit>
+                        <military_unit>
+							<type>
+                                Войници в резерва
+							</type>
+							<count>
+                                240 000
+							</count>
+						</military_unit>
+				</soldiers>
+				<weapons>
+						<combat_unit>
+							<type>Танка
+							</type>
+                            <count>2 500</count>
+						</combat_unit>
+                        <combat_unit>
+							<type>Военни самолети
+							</type>
+                            <count>957</count>
+						</combat_unit>
+				</weapons>
+			</power>
+			<losses>
+				<killed>
+                    17 700
+				</killed>
+                <wounded>
+                    2 500
+				</wounded>
+                <captured>
+                    5 000
+				</captured>
+			</losses>
+		</fighting_force>
+	</battle>
+
+    <battle name="Англо-занзибарската война" type="сухопътна">
+		<image href="zanzibar" />
+		<conflict>
+			<name>
+                Англо-занзибарската война
+			</name>
+			<period>
+                38 минути, 27 август, 1896 г.
+			</period>
+		</conflict>
+		<cause>
+            Султан Хамад ибн Тувайни, подкрепян от британците, умира. Чрез преврат, братовчед му - Халид ибн Баргаш, подкрепян от Германия, взима властта.
+		</cause>
+		<triggering_event>
+			На 26 август 1896 г. британската страна представя ултиматум, изтичащ на 27 август в 9:00 часа, според който занзибарците трябва да сложат оръжие и свалят знамето си, а Халид ибн Баргаш да се откаже от претенциите си за трона.
+		</triggering_event>
+		<location>
+            Занзибар
+		</location>
+		<start>
+			<date>
+				1896-08-27
+			</date>
+			<time>
+				09:00:00
+			</time>
+		</start>
+		<course_of_events>
+				<consecutive_event>
+					<date>
+						1896-08-27
+					</date>
+					<event>
+                        На 27 август в 8:00 ч. пратеник на султана иска организиране на среща с Базил Кейв, британския представител в Занзибар. 
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>
+						1896-08-27
+					</date>
+					<event>
+                        8:30 - Халид ибн Баргаш изпраща известие, съобщаващо, че не възнамерява да се предава и не вярва, че британците ще си позволят да открият огън.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>
+						1896-08-27
+					</date>
+					<event>
+						9:00 - Британски кораби откриват огън по султанския дворец.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>
+						1896-08-27
+					</date>
+					<event>
+                        9:05 - Единственият занзибарски кораб „Глазгоу“ отговоря на стрелбата, прицелвайки се в британския крайцер „Сейнт Джордж“, който веднага открива огън от тежките си оръдия почти от упор, незабавно потопявайки противника си.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>
+						1896-08-27
+					</date>
+					<event>
+                        9:38 - Британски снаряд поразява флагщока на двореца и сваля занзибарскотознаме. Обстрелът е прекратен и битката приключва.
+					</event>
+				</consecutive_event>
+		</course_of_events>
+		<end>
+			<date>
+				1896-08-27
+			</date>
+			<time>
+				09:38:00
+			</time>
+		</end>
+		<result>
+			<winner force_id="Great_Britain_19_century">
+                Британска империя
+				<!-- тук може winner и loser да са атрибути на fighting force -->
+			</winner>
+			<results_list>
+				<event>Халид ибн Баргаш търси убежище в германското посолство, откъдето е изведен чрез хитрост.
+				</event>
+				<event>Убедителната победа на британците е една от причините в следващите 67 години британско управление в Занзибар да няма бунтове.
+				</event>
+			</results_list>
+		</result>
+		<fighting_force id="Great_Britain_19_century">
+			<name>
+                Британска империя
+			</name>
+			<!-- may be attribute -->
+			<fighting_type>
+				<!-- attacker or defender -->
+				Нападателна сила
+			</fighting_type>
+			<military_leaders_list>
+                <leader>
+					Лойд Матюс
+				</leader>
+			</military_leaders_list>
+			<power>
+				<soldiers count-all="1050">
+						<military_unit>
+							<type>Редовни войници
+							</type>
+							<count>1050
+							</count>
+						</military_unit>
+				</soldiers>
+				<fleet>
+						<naval_military_item>
+							<type>Крайцери
+							</type>
+							<count>2
+							</count>
+						</naval_military_item>
+                        <naval_military_item>
+							<type>Канонерски лодки
+							</type>
+							<count>3
+							</count>
+						</naval_military_item>
+				</fleet>
+			</power>
+			<losses>
+				<wounded>1
+				</wounded>
+			</losses>
+		</fighting_force>
+		<fighting_force id="Zanzibar_Sultanate">
+			<name>Занзибарски султанат
+			</name>
+			<!-- may be attribute -->
+			<fighting_type>
+                Отбраняваща сила
+				<!-- attacker or defender -->
+			</fighting_type>
+			<military_leaders_list>
+				<leader>
+					Халид ибн Баргаш
+				</leader>				
+			</military_leaders_list>
+			<power>
+				<soldiers count-all="2800">
+						<military_unit>
+							<type>Редовна войска
+							</type>
+							<count>2800
+							</count>
+						</military_unit>
+				</soldiers>
+				<weapons>
+						<combat_unit>
+							<type>12-фунтови оръдия
+							</type>
+                            <count>2</count>
+						</combat_unit>
+                        <combat_unit>
+							<type>Оръдия от 17 век
+							</type>
+                            <count>3</count>
+						</combat_unit>
+				</weapons>
+				<fleet>
+						<naval_military_item>
+							<type>Яхта
+							</type>
+							<count>1
+							</count>
+						</naval_military_item>
+				</fleet>
+			</power>
+			<losses>
+				<killed>570
+				</killed>
+			</losses>
+		</fighting_force>
+	</battle>
+
+	<battle name="Битка при Курск" type="сухопътна и въздушна">
+		<image href="kursk" />
+		<conflict>
+			<name>Втора световна война
+			</name>
+			<period>1939-1945 г.
+			</period>
+		</conflict>
+		<cause>
+			СССР печели битката при Сталинград, настъпва в контролираните германски територии и образува защитен обрач около град Курск.
+		</cause>
+		<triggering_event>
+			Пристигане на танковите формации с нови танкове, които Хитлер очаква.
+		</triggering_event>
+		<location>
+			Курск
+		</location>
+		<start>
+			<date>
+				1943-07-05
+			</date>
+			<time>
+				05:30:00
+			</time>
+		</start>
+		<course_of_events>
+				<consecutive_event>
+					<date>1943-07-05
+					</date>
+					<event>
+						Германските войски започват настъпление от север и от юг.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>1943-07-12
+					</date>
+					<event>Прелом в битката. Включват се съветските стратегически резерви. Състои се най-голямото в историята танково сражение. Германската армия преминава в отбрана.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>1943-07-16
+					</date>
+					<event>
+						Германия започва отстъпление.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>1943-07-26
+					</date>
+					<event>
+						Германските сили остъпват Орел
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>1943-08-05
+					</date>
+					<event>
+						Орел е освободен
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>1943-08-12
+					</date>
+					<event>Руската армия достига до Краков.
+					</event>
+				</consecutive_event>
+				<consecutive_event>
+					<date>1943-08-23
+					</date>
+					<event>Краков е освобеден. Край на битките при Курската дъга.
+					</event>
+				</consecutive_event>
+		</course_of_events>
+		<end>
+			<date>
+				1943-08-02
+			</date>
+		</end>
+		<result>
+			<winner force_id="USSR">
+				СССР
+				<!-- тук може winner и loser да са атрибути на fighting force -->
+			</winner>
+			<results_list>
+				<event>Битката при Курск извършва коренен прелом в хода на войната на Източния фронт и съществено влияе върху хода на Втората световна война.
+				</event>
+				<event>
+					Стратегическата инициатива окончателно преминава в ръцете на съветското командване.
+				</event>
+				<event>
+					Германия не успява повече да инициира големи военни действия на Източния фронт.
+				</event>
+				<event>
+					Сталин отстъпва командването на Червената армия на доказалите се генерали, докато Хитлер губи позиции сред армията.
+				</event>
+			</results_list>
+		</result>
+		<fighting_force id="German_Empire">
+			<name>Германска империя
+			</name>
+			<!-- may be attribute -->
+			<fighting_type>
+				<!-- attacker or defender -->
+				Нападателна сила
+			</fighting_type>
+			<military_leaders_list>
+				<leader>
+					Ерих фон Манщайн
+				</leader>		
+				<leader>
+					Гюнтер фон Клуге
+				</leader>		
+			</military_leaders_list>
+			<power>
+				<soldiers count-all="940 900">
+						<military_unit>
+							<type>Пехотинци
+							</type>
+							<count>780 900
+							</count>
+						</military_unit>
+						<military_unit>
+							<type>Резерв
+							</type>
+							<count>160 000
+							</count>
+						</military_unit>
+				</soldiers>
+				<weapons>
+						<combat_unit>
+							<type>Танка
+							</type>
+							<count>3 253</count>
+						</combat_unit>
+						<combat_unit>
+							<type>Минохвъргачки и оръдия
+							</type>
+							<count>9 467</count>
+						</combat_unit>
+						<combat_unit>
+							<type>Военни самолети
+							</type>
+							<count>2 110</count>
+						</combat_unit>
+				</weapons>
+			</power>
+			<losses>
+				<killed>
+					165 314
+				</killed>
+			</losses>
+		</fighting_force>
+		<fighting_force id="USSR">
+			<name>Съветски съюз
+			</name>
+			<!-- may be attribute -->
+			<fighting_type>
+				Отбраняваща сила
+				<!-- attacker or defender -->
+			</fighting_type>
+			<military_leaders_list>
+				<leader>
+					Георги Жуков
+				</leader>	
+				<leader>
+					Александър Василевски
+				</leader>
+			</military_leaders_list>
+			<power>
+				<soldiers count-all="2 500 000">
+						<military_unit>
+							<type>Пехотинци
+							</type>
+							<count>1 426 352
+							</count>
+						</military_unit>
+						<military_unit>
+							<type>Резерв
+							</type>
+							<count>1 073 648
+							</count>
+						</military_unit>
+				</soldiers>
+				<weapons>
+						<combat_unit>
+							<type>Танка
+							</type>
+							<count>7 360</count>
+						</combat_unit>
+						<combat_unit>
+							<type>Минохвъргачки и оръдия
+							</type>
+							<count>47 416</count>
+						</combat_unit>
+						<combat_unit>
+							<type>Военни самолети
+							</type>
+							<count>3 500</count>
+						</combat_unit>
+				</weapons>
+			</power>
+			<losses>
+				<killed>254 470
+				</killed>
+				<wounded>608 000
+				</wounded>
+			</losses>
+		</fighting_force>
+	</battle>
+</catalog>
